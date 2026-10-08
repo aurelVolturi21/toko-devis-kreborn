@@ -1,0 +1,639 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0A0A0A" />
+  <meta name="description" content="Proposition digitale K-Reborn pour TOKO." />
+  <title>Proposition digitale — TOKO × K-Reborn</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            kr: {
+              black: '#0A0A0A',
+              orange: '#FF6A00',
+              green: '#00C853',
+            }
+          },
+          fontFamily: {
+            display: ['Montserrat', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          boxShadow: {
+            premium: '0 24px 80px rgba(0,0,0,.35)',
+            orange: '0 12px 40px rgba(255,106,0,.16)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { background: #0A0A0A; }
+    ::selection { background: #FF6A00; color: #fff; }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+      mask-image: linear-gradient(to bottom, black 0%, transparent 85%);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal-backdrop {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-panel {
+      transform: translateY(12px) scale(.98);
+      transition: transform .25s ease;
+    }
+
+    .modal-backdrop.open .modal-panel {
+      transform: translateY(0) scale(1);
+    }
+  </style>
+</head>
+
+<body class="font-body text-white antialiased">
+
+  <div class="fixed inset-0 grid-bg pointer-events-none"></div>
+
+  <!-- Header -->
+  <header class="relative z-20 border-b border-white/10 bg-[#0A0A0A]/80 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
+      <a href="#home" class="flex items-center gap-3" aria-label="K-Reborn">
+        <!-- Remplacer par le vrai logo K-Reborn -->
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/[.04] font-display font-extrabold">
+          <img src="assets/footer-reborn.png" alt="">
+        </div>
+        <div>
+          <div class="font-display text-sm font-extrabold tracking-tight">K-REBORN</div>
+          <div class="text-[10px] uppercase tracking-[.24em] text-white/40">A l'ère du numériqe africain</div>
+        </div>
+      </a>
+
+      <div class="hidden items-center gap-3 sm:flex">
+        <span class="rounded-full border border-white/10 px-3 py-1.5 text-xs text-white/50">
+          Proposition digitale
+        </span>
+        <span class="rounded-full border border-kr-orange/30 bg-kr-orange/10 px-3 py-1.5 text-xs font-medium text-kr-orange">
+          TOKO
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+
+    <!-- SCREEN 1 -->
+    <section id="home" class="relative overflow-hidden">
+      <div class="mx-auto grid min-h-[calc(100vh-81px)] max-w-7xl items-center gap-16 px-5 py-20 sm:px-8 lg:grid-cols-[1.1fr_.9fr] lg:py-24">
+
+        <div class="reveal">
+          <div class="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[.24em] text-white/45">
+            <span class="h-px w-10 bg-kr-orange"></span>
+            Proposition digitale · TOKO
+          </div>
+
+          <h1 class="max-w-4xl font-display text-5xl font-extrabold leading-[.98] tracking-[-.045em] sm:text-6xl lg:text-7xl">
+            TOKO entre dans une
+            <span class="text-kr-orange"> nouvelle dimension.</span>
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-base leading-8 text-white/60 sm:text-lg">
+            Votre marque a déjà son identité, son savoir-faire et son marché.
+            Cette proposition vise à lui donner une nouvelle manière de vendre,
+            de servir ses clients et de préparer son développement numérique à
+            l'échelle du marché africain.
+          </p>
+
+          <div class="mt-10 flex flex-wrap gap-3">
+            <span class="rounded-full border border-white/10 bg-white/[.03] px-4 py-2 text-sm text-white/70">Boutique e-commerce</span>
+            <span class="rounded-full border border-white/10 bg-white/[.03] px-4 py-2 text-sm text-white/70">Customisation</span>
+            <span class="rounded-full border border-white/10 bg-white/[.03] px-4 py-2 text-sm text-white/70">Évolution IA</span>
+          </div>
+        </div>
+
+        <div class="reveal lg:justify-self-end">
+          <div class="relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.035] p-7 shadow-premium sm:p-9">
+            <div class="absolute -right-24 -top-24 h-56 w-56 rounded-full bg-kr-orange/10 blur-3xl"></div>
+
+            <div class="relative">
+              <div class="text-xs font-semibold uppercase tracking-[.22em] text-white/40">
+                Évaluation du projet
+              </div>
+
+              <div class="mt-3 font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+                1 500 000 <span class="text-lg text-white/40">FCFA</span>
+              </div>
+
+              <div class="my-7 h-px bg-white/10"></div>
+
+              <div class="text-xs font-semibold uppercase tracking-[.22em] text-kr-green">
+                Avantage partenaire · 16'Arts
+              </div>
+
+              <div class="mt-2 flex items-end justify-between gap-4">
+                <span class="text-sm text-white/55">Réduction exceptionnelle</span>
+                <span class="font-display text-2xl font-extrabold text-kr-orange">−35 %</span>
+              </div>
+
+              <div class="mt-7 rounded-2xl border border-kr-orange/20 bg-kr-orange/[.06] p-5">
+                <div class="text-xs uppercase tracking-[.2em] text-white/40">Votre investissement</div>
+                <div class="mt-1 font-display text-4xl font-extrabold text-white sm:text-5xl">
+                  975 000 <span class="text-base text-white/40">FCFA</span>
+                </div>
+              </div>
+
+              <button
+                data-scroll="#evaluation"
+                class="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-white px-5 py-3.5 text-sm font-bold text-[#0A0A0A] transition hover:bg-kr-orange hover:text-white"
+              >
+                Pourquoi ce coût ?
+                <i data-lucide="arrow-down" class="h-4 w-4"></i>
+              </button>
+
+              <p class="mt-4 text-center text-xs leading-5 text-white/35">
+                Une proposition pensée pour construire aujourd'hui et préparer demain.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT SCOPE -->
+    <section class="border-y border-white/10 bg-white/[.018]">
+      <div class="mx-auto grid max-w-7xl gap-px px-5 py-16 sm:px-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal border-white/10 p-6 md:border-r">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kr-orange/10 text-kr-orange">
+            <i data-lucide="shopping-bag"></i>
+          </div>
+          <h2 class="font-display text-xl font-bold">Boutique</h2>
+          <p class="mt-2 text-sm leading-6 text-white/50">Vendre les produits TOKO directement en ligne, du catalogue au paiement.</p>
+        </div>
+
+        <div class="reveal border-white/10 p-6 lg:border-r">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-kr-green/10 text-kr-green">
+            <i data-lucide="wand-sparkles"></i>
+          </div>
+          <h2 class="font-display text-xl font-bold">Customisation</h2>
+          <p class="mt-2 text-sm leading-6 text-white/50">Offrir un parcours dédié aux objets personnalisés et à leur commande.</p>
+        </div>
+
+        <div class="reveal p-6">
+          <div class="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/5 text-white/70">
+            <i data-lucide="bot"></i>
+          </div>
+          <h2 class="font-display text-xl font-bold">Évolution IA</h2>
+          <p class="mt-2 text-sm leading-6 text-white/50">Préparer la V2 et son assistant intelligent dédié à la customisation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section id="evaluation" class="scroll-mt-20">
+      <div class="mx-auto max-w-7xl px-5 py-24 sm:px-8">
+        <div class="reveal max-w-3xl">
+          <div class="mb-5 text-xs font-semibold uppercase tracking-[.24em] text-kr-orange">L'évaluation du projet</div>
+          <h2 class="font-display text-4xl font-extrabold tracking-tight sm:text-5xl">
+            Derrière le prix, il y a surtout du travail.
+          </h2>
+          <p class="mt-5 text-base leading-8 text-white/55">
+            Nous préférons être transparents. Voici ce que K-Reborn prévoit de construire pour TOKO, poste par poste.
+            Chaque élément peut être exploré pour découvrir ce qui se trouve concrètement derrière l'évaluation.
+          </p>
+        </div>
+
+        <div id="cards" class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3"></div>
+
+        <div class="reveal mt-8 rounded-3xl border border-white/10 bg-white/[.025] p-6 sm:p-8">
+          <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <div class="font-display text-xl font-bold">La plateforme est conçue pour évoluer.</div>
+              <p class="mt-2 max-w-2xl text-sm leading-6 text-white/45">
+                La V1 constitue la base commerciale de TOKO. La V2 viendra y ajouter une nouvelle interface :
+                un assistant IA capable d'accompagner les clients dans leur parcours de customisation.
+              </p>
+            </div>
+            <div class="shrink-0 rounded-2xl border border-kr-green/20 bg-kr-green/5 px-5 py-3 text-sm text-kr-green">
+              V1 → V2
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 4 -->
+    <section id="decision" class="scroll-mt-20 border-t border-white/10">
+      <div class="mx-auto max-w-5xl px-5 py-24 text-center sm:px-8">
+        <div class="reveal">
+          <div class="text-xs font-semibold uppercase tracking-[.24em] text-kr-orange">L'investissement</div>
+          <h2 class="mt-5 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
+            Une base solide pour la prochaine étape de TOKO.
+          </h2>
+          <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/50">
+            Nous avons voulu construire une proposition simple à comprendre et suffisamment détaillée
+            pour que vous sachiez exactement ce qui se trouve derrière chaque montant.
+          </p>
+        </div>
+
+        <div class="reveal mx-auto mt-12 max-w-2xl overflow-hidden rounded-[2rem] border border-white/10 bg-white/[.03] p-7 text-left shadow-premium sm:p-9">
+          <div class="flex items-center justify-between border-b border-white/10 pb-5">
+            <span class="text-sm text-white/45">Évaluation du projet</span>
+            <span class="font-display font-bold">1 500 000 FCFA</span>
+          </div>
+
+          <div class="flex items-center justify-between border-b border-white/10 py-5">
+            <span class="text-sm text-white/45">Avantage partenaire · 16'Arts</span>
+            <span class="font-display font-bold text-kr-orange">−525 000 FCFA</span>
+          </div>
+
+          <div class="pt-7">
+            <div class="text-xs uppercase tracking-[.2em] text-white/35">Votre investissement</div>
+            <div class="mt-2 font-display text-5xl font-extrabold tracking-tight sm:text-6xl">
+              975 000 <span class="text-lg text-white/35">FCFA</span>
+            </div>
+          </div>
+
+          <div class="mt-7 rounded-2xl border border-kr-green/15 bg-kr-green/[.04] p-5">
+            <p class="text-sm leading-6 text-white/55">
+              Cette réduction exceptionnelle est accordée à TOKO dans le cadre de sa mise en relation
+              avec K-Reborn par <strong class="text-white/80">16'Arts</strong>, notre partenaire d'affaires.
+            </p>
+          </div>
+
+          <div class="mt-7 grid gap-3 sm:grid-cols-2">
+            <a
+              id="whatsapp-accept"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 rounded-xl bg-kr-green px-5 py-4 text-sm font-bold text-[#0A0A0A] transition hover:brightness-110"
+            >
+              <i data-lucide="message-circle" class="h-5 w-5"></i>
+              Le prix me convient
+            </a>
+
+            <a
+              id="whatsapp-offer"
+              href="#"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/[.04] px-5 py-4 text-sm font-bold text-white transition hover:border-kr-orange/50 hover:bg-kr-orange/10"
+            >
+              <i data-lucide="handshake" class="h-5 w-5"></i>
+              Faire une offre
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="relative z-10 border-t border-white/10">
+    <div class="mx-auto flex max-w-7xl flex-col gap-3 px-5 py-8 text-xs text-white/30 sm:px-8 sm:flex-row sm:items-center sm:justify-between">
+      <span>© K-Reborn — À l'ère du numérique africain.</span>
+      <span>Proposition digitale · TOKO</span>
+    </div>
+  </footer>
+
+  <!-- TECHNICAL MODAL -->
+  <div id="technical-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-md">
+    <div class="modal-panel max-h-[90vh] w-full max-w-2xl overflow-hidden rounded-3xl border border-white/10 bg-[#101010] shadow-premium">
+      <div class="flex items-start justify-between border-b border-white/10 p-6 sm:p-8">
+        <div>
+          <div id="modal-number" class="text-xs font-semibold uppercase tracking-[.22em] text-kr-orange"></div>
+          <h3 id="modal-title" class="mt-2 font-display text-2xl font-bold"></h3>
+        </div>
+        <button id="modal-close" class="rounded-xl border border-white/10 p-2 text-white/50 transition hover:bg-white/5 hover:text-white" aria-label="Fermer">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="max-h-[65vh] overflow-y-auto p-6 sm:p-8">
+        <div class="text-xs font-semibold uppercase tracking-[.2em] text-white/35">Ce que K-Reborn va mettre en place</div>
+        <ul id="modal-tasks" class="mt-5 space-y-3"></ul>
+      </div>
+
+      <div class="border-t border-white/10 bg-white/[.02] p-6 sm:p-8">
+        <div class="flex items-center justify-between gap-4">
+          <span class="text-sm text-white/40">Poste</span>
+          <span id="modal-price" class="font-display text-xl font-bold"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const posts = [
+      {
+        number: '01',
+        title: 'Conception & architecture',
+        icon: 'layers-3',
+        price: '150 000 FCFA',
+        summary: 'Structurer le projet avant de construire : parcours utilisateurs, architecture technique, données et préparation de l’évolution future de la plateforme.',
+        tasks: [
+          'Analyse et structuration des besoins TOKO',
+          'Définition des parcours Boutique et Customisation',
+          'Architecture de l’application Laravel',
+          'Modélisation de la base de données',
+          'Définition des relations entre les données',
+          'Préparation de l’architecture nécessaire à la V2',
+          'Mise en place de la structure initiale du projet'
+        ]
+      },
+      {
+        number: '02',
+        title: 'Interface & expérience utilisateur',
+        icon: 'monitor-smartphone',
+        price: '200 000 FCFA',
+        summary: 'Créer une expérience digitale claire, moderne et responsive, pensée pour les usages mobiles, tablettes et ordinateurs.',
+        tasks: [
+          'Interface responsive',
+          'Intégration Tailwind CSS',
+          'Pages principales de la plateforme',
+          'Composants d’interface réutilisables',
+          'Parcours mobile-first',
+          'Adaptation tablette et desktop',
+          'États des interfaces et retours utilisateur'
+        ]
+      },
+      {
+        number: '03',
+        title: 'Catalogue e-commerce',
+        icon: 'shopping-bag',
+        price: '250 000 FCFA',
+        summary: 'Mettre en place l’univers commercial de TOKO : produits, catégories, variantes, images, prix, disponibilités et gestion des stocks.',
+        tasks: [
+          'Gestion des catégories',
+          'Création et modification des produits',
+          'Gestion des images',
+          'Gestion des prix',
+          'Gestion des variantes',
+          'Gestion des disponibilités',
+          'Gestion des stocks',
+          'Publication et retrait des produits'
+        ]
+      },
+      {
+        number: '04',
+        title: 'Panier & commande',
+        icon: 'shopping-cart',
+        price: '250 000 FCFA',
+        summary: 'Permettre au client de sélectionner ses produits, préparer son panier et finaliser sa commande à travers un parcours d’achat fluide.',
+        tasks: [
+          'Ajout au panier',
+          'Modification des quantités',
+          'Suppression des articles',
+          'Gestion des variantes',
+          'Calcul du sous-total',
+          'Calcul du total',
+          'Récapitulatif de commande',
+          'Collecte des informations client',
+          'Création de la commande',
+          'Confirmation de commande'
+        ]
+      },
+      {
+        number: '05',
+        title: 'Paiement & livraison',
+        icon: 'credit-card',
+        price: '200 000 FCFA',
+        summary: 'Connecter le parcours de commande au paiement en ligne et structurer les règles nécessaires à la livraison des commandes.',
+        tasks: [
+          'Intégration du moyen de paiement retenu',
+          'Initialisation du paiement',
+          'Gestion du retour de paiement',
+          'Vérification du statut de transaction',
+          'Gestion des statuts de paiement',
+          'Configuration des règles de livraison',
+          'Calcul des frais de livraison',
+          'Gestion du statut de livraison'
+        ]
+      },
+      {
+        number: '06',
+        title: 'Parcours Customisation',
+        icon: 'wand-sparkles',
+        price: '200 000 FCFA',
+        summary: 'Donner aux clients de TOKO un parcours dédié pour choisir un objet, définir sa personnalisation, transmettre ses éléments et préparer sa commande.',
+        tasks: [
+          'Catalogue des supports personnalisables',
+          'Sélection du produit',
+          'Sélection des options',
+          'Gestion des quantités',
+          'Choix du type de personnalisation',
+          'Transmission de textes et informations',
+          'Upload de fichiers ou visuels',
+          'Récapitulatif de la configuration',
+          'Intégration au processus de commande'
+        ]
+      },
+      {
+        number: '07',
+        title: 'Moteur tarifaire',
+        icon: 'calculator',
+        price: '125 000 FCFA',
+        summary: 'Transformer la grille tarifaire de TOKO en règles exploitables par la plateforme afin de calculer automatiquement le prix d’une customisation.',
+        tasks: [
+          'Structuration des règles tarifaires fournies par TOKO',
+          'Association des tarifs aux produits',
+          'Gestion des options',
+          'Gestion des seuils de quantité',
+          'Calcul automatique du prix',
+          'Transmission du prix au panier',
+          'Préparation de l’intégration avec l’assistant IA V2'
+        ]
+      },
+      {
+        number: '08',
+        title: 'Back-office TOKO',
+        icon: 'layout-dashboard',
+        price: '125 000 FCFA',
+        summary: 'Donner à TOKO les outils nécessaires pour administrer ses produits, ses stocks, ses commandes, ses clients et ses demandes de customisation.',
+        tasks: [
+          'Authentification administrateur',
+          'Gestion des produits',
+          'Gestion des catégories',
+          'Gestion des stocks',
+          'Gestion des commandes',
+          'Gestion des clients',
+          'Gestion des demandes de customisation',
+          'Gestion des paramètres tarifaires',
+          'Suivi des statuts'
+        ]
+      },
+      {
+        number: '09',
+        title: 'Tests & mise en production',
+        icon: 'rocket',
+        price: 'Inclus dans l’évaluation globale',
+        summary: 'Vérifier les parcours, corriger les anomalies et mettre la plateforme en production sur l’infrastructure prévue pour TOKO.',
+        tasks: [
+          'Tests des parcours principaux',
+          'Vérification du responsive',
+          'Vérification des commandes',
+          'Vérification du paiement',
+          'Vérification du parcours Customisation',
+          'Correction des anomalies identifiées',
+          'Configuration de production',
+          'Déploiement via Git sur le VPS',
+          'Configuration de l’environnement de production',
+          'Mise en ligne'
+        ]
+      }
+    ];
+
+    const cards = document.getElementById('cards');
+    const modal = document.getElementById('technical-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalNumber = document.getElementById('modal-number');
+    const modalPrice = document.getElementById('modal-price');
+    const modalTasks = document.getElementById('modal-tasks');
+
+    cards.innerHTML = posts.map(post => `
+      <article class="reveal group rounded-3xl border border-white/10 bg-white/[.025] p-6 transition duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[.04]">
+        <div class="flex items-start justify-between gap-4">
+          <div class="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[.035] text-white/70 transition group-hover:border-kr-orange/30 group-hover:text-kr-orange">
+            <i data-lucide="${post.icon}" class="h-5 w-5"></i>
+          </div>
+          <span class="font-display text-xs font-bold text-white/25">${post.number}</span>
+        </div>
+
+        <h3 class="mt-7 font-display text-xl font-bold">${post.title}</h3>
+        <p class="mt-3 min-h-[72px] text-sm leading-6 text-white/45">${post.summary}</p>
+
+        <div class="mt-7 flex items-end justify-between gap-4 border-t border-white/10 pt-5">
+          <div class="font-display text-lg font-bold">${post.price}</div>
+          <button
+            data-post="${post.number}"
+            class="technical-btn inline-flex items-center gap-2 text-xs font-bold text-white/60 transition hover:text-kr-orange"
+          >
+            Détails techniques
+            <i data-lucide="arrow-up-right" class="h-4 w-4"></i>
+          </button>
+        </div>
+      </article>
+    `).join('');
+
+    function openModal(post) {
+      modalNumber.textContent = `Poste ${post.number}`;
+      modalTitle.textContent = post.title;
+      modalPrice.textContent = post.price;
+      modalTasks.innerHTML = post.tasks.map(task => `
+        <li class="flex gap-3 text-sm leading-6 text-white/65">
+          <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-kr-orange"></span>
+          <span>${task}</span>
+        </li>
+      `).join('');
+
+      modal.classList.add('open');
+      document.body.classList.add('overflow-hidden');
+      lucide.createIcons();
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    document.addEventListener('click', (event) => {
+      const button = event.target.closest('.technical-btn');
+      if (button) {
+        const post = posts.find(item => item.number === button.dataset.post);
+        if (post) openModal(post);
+      }
+
+      const scrollButton = event.target.closest('[data-scroll]');
+      if (scrollButton) {
+        const target = document.querySelector(scrollButton.dataset.scroll);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeModal();
+    });
+
+    // Remplacer par le numéro WhatsApp réel de K-Reborn.
+    const whatsappNumber = '22967859696';
+
+    const acceptMessage = `Bonjour K-Reborn 👋
+
+Nous avons pris connaissance de la proposition digitale préparée pour TOKO.
+
+Le montant proposé après l’avantage 16'Arts, soit 975 000 FCFA, nous convient.
+
+Nous souhaitons échanger avec vous afin de définir les prochaines étapes de la collaboration.
+
+Merci.`;
+
+    const offerMessage = `Bonjour K-Reborn 👋
+
+Nous avons pris connaissance de la proposition digitale préparée pour TOKO.
+
+Nous sommes intéressés par le projet et souhaitons échanger avec vous concernant les conditions de la proposition.
+
+Nous aimerions vous faire une offre afin de trouver ensemble les modalités qui nous conviennent.
+
+Merci.`;
+
+    document.getElementById('whatsapp-accept').href =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(acceptMessage)}`;
+
+    document.getElementById('whatsapp-offer').href =
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(offerMessage)}`;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    lucide.createIcons();
+  </script>
+</body>
+</html>
